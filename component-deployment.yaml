@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: back-end
+  labels:
+    app: back-end
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: back-end
+  template:
+    metadata:
+      labels:
+        app: back-end
+    spec:
+      containers:
+        - image: 'cyldecryo/parcial-1-patrones:ce120101e63387ce18e24128f1371f7bcb77dc57'
+          name: back-end
+          ports:
+            - containerPort: 9090
